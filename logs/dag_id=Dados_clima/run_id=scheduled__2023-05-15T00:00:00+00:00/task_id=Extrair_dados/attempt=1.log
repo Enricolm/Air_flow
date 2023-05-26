@@ -1,0 +1,34 @@
+[2023-05-26 17:43:54,341] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: Dados_clima.Extrair_dados scheduled__2023-05-15T00:00:00+00:00 [queued]>
+[2023-05-26 17:43:54,346] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: Dados_clima.Extrair_dados scheduled__2023-05-15T00:00:00+00:00 [queued]>
+[2023-05-26 17:43:54,346] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2023-05-26 17:43:54,347] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2023-05-26 17:43:54,347] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2023-05-26 17:43:54,373] {taskinstance.py:1377} INFO - Executing <Task(PythonOperator): Extrair_dados> on 2023-05-15 00:00:00+00:00
+[2023-05-26 17:43:54,377] {standard_task_runner.py:52} INFO - Started process 10626 to run task
+[2023-05-26 17:43:54,380] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'Dados_clima', 'Extrair_dados', 'scheduled__2023-05-15T00:00:00+00:00', '--job-id', '61', '--raw', '--subdir', 'DAGS_FOLDER/Climas.py', '--cfg-path', '/tmp/tmp41fv5k89', '--error-file', '/tmp/tmpjm2kyl_m']
+[2023-05-26 17:43:54,381] {standard_task_runner.py:80} INFO - Job 61: Subtask Extrair_dados
+[2023-05-26 17:43:54,422] {task_command.py:370} INFO - Running <TaskInstance: Dados_clima.Extrair_dados scheduled__2023-05-15T00:00:00+00:00 [running]> on host enricolm-virtual-machine
+[2023-05-26 17:43:54,472] {taskinstance.py:1569} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=Dados_clima
+AIRFLOW_CTX_TASK_ID=Extrair_dados
+AIRFLOW_CTX_EXECUTION_DATE=2023-05-15T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2023-05-15T00:00:00+00:00
+[2023-05-26 17:43:59,594] {taskinstance.py:1889} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/enricolm/Documents/airflowalura/venv/lib/python3.9/site-packages/airflow/operators/python.py", line 171, in execute
+    return_value = self.execute_callable()
+  File "/home/enricolm/Documents/airflowalura/venv/lib/python3.9/site-packages/airflow/operators/python.py", line 189, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/home/enricolm/Documents/airflowalura/dags/Climas.py", line 21, in extraindo_dados
+    shutil.move(f'/home/enricolm/Desktop/Air/Dados/{data}','/home/enricolm/Documents/airflowalura/PastaExemplo1/')
+  File "/usr/lib/python3.9/shutil.py", line 823, in move
+    raise Error("Destination path '%s' already exists" % real_dst)
+shutil.Error: Destination path '/home/enricolm/Documents/airflowalura/PastaExemplo1/2023-05-27' already exists
+[2023-05-26 17:43:59,601] {taskinstance.py:1395} INFO - Marking task as FAILED. dag_id=Dados_clima, task_id=Extrair_dados, execution_date=20230515T000000, start_date=20230526T204354, end_date=20230526T204359
+[2023-05-26 17:43:59,616] {standard_task_runner.py:92} ERROR - Failed to execute job 61 for task Extrair_dados (Destination path '/home/enricolm/Documents/airflowalura/PastaExemplo1/2023-05-27' already exists; 10626)
+[2023-05-26 17:43:59,622] {local_task_job.py:156} INFO - Task exited with return code 1
+[2023-05-26 17:43:59,631] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

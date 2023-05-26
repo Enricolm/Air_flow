@@ -1,0 +1,23 @@
+[2023-05-26 17:45:13,044] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: Dados_clima.Extrair_dados manual__2023-05-26T20:45:10.580565+00:00 [queued]>
+[2023-05-26 17:45:13,053] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: Dados_clima.Extrair_dados manual__2023-05-26T20:45:10.580565+00:00 [queued]>
+[2023-05-26 17:45:13,053] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2023-05-26 17:45:13,053] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2023-05-26 17:45:13,053] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2023-05-26 17:45:13,068] {taskinstance.py:1377} INFO - Executing <Task(PythonOperator): Extrair_dados> on 2023-05-26 20:45:10.580565+00:00
+[2023-05-26 17:45:13,070] {standard_task_runner.py:52} INFO - Started process 11605 to run task
+[2023-05-26 17:45:13,079] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'Dados_clima', 'Extrair_dados', 'manual__2023-05-26T20:45:10.580565+00:00', '--job-id', '64', '--raw', '--subdir', 'DAGS_FOLDER/Climas.py', '--cfg-path', '/tmp/tmpnhxz78fv', '--error-file', '/tmp/tmprp_w8ky0']
+[2023-05-26 17:45:13,080] {standard_task_runner.py:80} INFO - Job 64: Subtask Extrair_dados
+[2023-05-26 17:45:13,124] {task_command.py:370} INFO - Running <TaskInstance: Dados_clima.Extrair_dados manual__2023-05-26T20:45:10.580565+00:00 [running]> on host enricolm-virtual-machine
+[2023-05-26 17:45:13,164] {taskinstance.py:1569} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=Dados_clima
+AIRFLOW_CTX_TASK_ID=Extrair_dados
+AIRFLOW_CTX_EXECUTION_DATE=2023-05-26T20:45:10.580565+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-05-26T20:45:10.580565+00:00
+[2023-05-26 17:45:18,298] {python.py:173} INFO - Done. Returned value was: None
+[2023-05-26 17:45:18,308] {taskinstance.py:1395} INFO - Marking task as SUCCESS. dag_id=Dados_clima, task_id=Extrair_dados, execution_date=20230526T204510, start_date=20230526T204513, end_date=20230526T204518
+[2023-05-26 17:45:18,354] {local_task_job.py:156} INFO - Task exited with return code 0
+[2023-05-26 17:45:18,363] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

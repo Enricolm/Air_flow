@@ -1,0 +1,32 @@
+[2023-05-25 22:23:28,100] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: Dados_clima.Extrair_dados scheduled__2023-04-17T00:00:00+00:00 [queued]>
+[2023-05-25 22:23:28,109] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: Dados_clima.Extrair_dados scheduled__2023-04-17T00:00:00+00:00 [queued]>
+[2023-05-25 22:23:28,109] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2023-05-25 22:23:28,109] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2023-05-25 22:23:28,109] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2023-05-25 22:23:28,127] {taskinstance.py:1377} INFO - Executing <Task(PythonOperator): Extrair_dados> on 2023-04-17 00:00:00+00:00
+[2023-05-25 22:23:28,134] {standard_task_runner.py:52} INFO - Started process 110745 to run task
+[2023-05-25 22:23:28,137] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'Dados_clima', 'Extrair_dados', 'scheduled__2023-04-17T00:00:00+00:00', '--job-id', '51', '--raw', '--subdir', 'DAGS_FOLDER/Climas.py', '--cfg-path', '/tmp/tmp4mwsu1_d', '--error-file', '/tmp/tmp1esfi12y']
+[2023-05-25 22:23:28,142] {standard_task_runner.py:80} INFO - Job 51: Subtask Extrair_dados
+[2023-05-25 22:23:28,214] {task_command.py:370} INFO - Running <TaskInstance: Dados_clima.Extrair_dados scheduled__2023-04-17T00:00:00+00:00 [running]> on host enricolm-virtual-machine
+[2023-05-25 22:23:28,275] {taskinstance.py:1569} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=Dados_clima
+AIRFLOW_CTX_TASK_ID=Extrair_dados
+AIRFLOW_CTX_EXECUTION_DATE=2023-04-17T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2023-04-17T00:00:00+00:00
+[2023-05-25 22:23:28,276] {taskinstance.py:1889} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/enricolm/Documents/airflowalura/venv/lib/python3.9/site-packages/airflow/operators/python.py", line 171, in execute
+    return_value = self.execute_callable()
+  File "/home/enricolm/Documents/airflowalura/venv/lib/python3.9/site-packages/airflow/operators/python.py", line 189, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/home/enricolm/Documents/airflowalura/dags/Climas.py", line 16, in extraindo_dados
+    os.chdir('~/Desktop/AirFlow')
+FileNotFoundError: [Errno 2] No such file or directory: '~/Desktop/AirFlow'
+[2023-05-25 22:23:28,280] {taskinstance.py:1395} INFO - Marking task as FAILED. dag_id=Dados_clima, task_id=Extrair_dados, execution_date=20230417T000000, start_date=20230526T012328, end_date=20230526T012328
+[2023-05-25 22:23:28,290] {standard_task_runner.py:92} ERROR - Failed to execute job 51 for task Extrair_dados ([Errno 2] No such file or directory: '~/Desktop/AirFlow'; 110745)
+[2023-05-25 22:23:28,320] {local_task_job.py:156} INFO - Task exited with return code 1
+[2023-05-25 22:23:28,339] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check
